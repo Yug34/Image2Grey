@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import javax.imageio.ImageIO;
 
-public class image2Black
+public class Image2Black
 {
     public static void main(String[] args)
     {
@@ -15,7 +15,7 @@ public class image2Black
 
         try
         {
-            File input = new File("C:\\Users\\Yug\\Desktop\\nature.jpg");
+            File input = new File("image.jpg");  //also works with pngs
 
             image = ImageIO.read(input);
             width = image.getWidth();
@@ -26,15 +26,15 @@ public class image2Black
                 for (int j = 0; j < width; j++)
                 {
                     Color c = new Color(image.getRGB(j, i));
-                    int red = (int)(c.getRed() * 0.299);
-                    int green = (int)(c.getGreen() * 0.587);
-                    int blue = (int)(c.getBlue() *0.114);
-                    Color newColor = new Color(red+green+blue,
-                            red+green+blue,red+green+blue);
+                    int r = (int)(c.getRed() * 0.299);
+                    int g = (int)(c.getGreen() * 0.587);
+                    int b = (int)(c.getBlue() *0.114);
+                    Color newColor = new Color(r+g+b,
+                            r+g+b,r+g+b);
                     image.setRGB(j,i,newColor.getRGB());
                 }
             }
-            File ouptut = new File("C:\\Users\\Yug\\Desktop\\natureBlack.jpg");
+            File ouptut = new File("output.jpg");
             System.out.println("Finished");
 
             ImageIO.write(image, "jpg", ouptut);
