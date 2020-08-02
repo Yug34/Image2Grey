@@ -24,14 +24,16 @@ public class Image2Black
             for (int i = 0; i < height; i++)
             {
                 for (int j = 0; j < width; j++)
-                {
+                {              
                     Color c = new Color(image.getRGB(j, i));
                     int r = (int)(c.getRed() * 0.299);
                     int g = (int)(c.getGreen() * 0.587);
-                    int b = (int)(c.getBlue() *0.114);
-                    Color newColor = new Color(r+g+b,
-                            r+g+b,r+g+b);
-                    image.setRGB(j,i,newColor.getRGB());
+                    int b = (int)(c.getBlue() * 0.114);
+
+                    int tot = r+g+b;
+                    Color newColor = new Color(tot, tot, tot);
+                    
+                    image.setRGB(j, i, newColor.getRGB());
                 }
             }
             File ouptut = new File("output.jpg");
