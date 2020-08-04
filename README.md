@@ -12,6 +12,12 @@ Dependencies:
     
     import javax.imageio.ImageIO;
 
+
+
+Original Image:
+
 ![NatureRGB](https://github.com/Yug34/Image2Grey/blob/master/nature.jpg)
+
+Greyscaled:
 
 ![NatureBlack](https://github.com/Yug34/Image2Grey/blob/master/natureBlack.jpg)
